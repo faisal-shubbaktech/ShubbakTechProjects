@@ -17,6 +17,10 @@ export default class App extends Component {
    
     this.state = {
     loading: false,
+    data1: false,
+    data2: false,
+    data3: false,
+
     data: [
         {
           name:{
@@ -156,6 +160,223 @@ export default class App extends Component {
     );
     };
 
+    changeData = () => {
+
+      if(data1 === false)
+      {
+        this.setState({data1:true});
+        this.setState({data2:false});
+        this.setState({data3:false});
+
+        this.setState({data: [
+          {
+            name:{
+              first:'Shopwise',
+              last: 'Success . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'3:20',
+            picture: {
+                thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+            }
+          },
+  
+          {
+            name:{
+              first:'Umbrella',
+              last: 'Success . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'1:30',
+            picture: {
+                thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+            }
+          },
+  
+          {
+            name:{
+              first:'The Lucky Ones',
+              last: 'Failed . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'May 12',
+            picture: {
+                thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+            }
+          },
+  
+          {
+            name:{
+              first:'Cribys & Bros',
+              last: 'Success . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'May 09',
+            picture: {
+                thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+            }
+          },
+  
+          {
+            name:{
+              first:'Utopia',
+              last: 'Success . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'April 23',
+            picture: {
+                thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+            }
+          }]} )
+        
+        }
+
+      else
+        if(data2 === false)
+        {
+          this.setState({data2:true});
+          this.setState({data1:false});
+          this.setState({data3:false});
+
+          this.setState({data:[
+            {
+            name:{
+              first:'Shopwise',
+              last: 'Failed . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'3:20',
+            picture: {
+                thumbnail: 'https://randomuser.me/api/portraits/thumb/men/83.jpg'
+            }
+          },
+  
+          {
+            name:{
+              first:'Umbrella',
+              last: 'Success . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'1:30',
+            picture: {
+                thumbnail: 'https://randomuser.me/api/portraits/thumb/men/83.jpg'
+            }
+          },
+  
+          {
+            name:{
+              first:'The Lucky Ones',
+              last: 'Failed . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'May 12',
+            picture: {
+                thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+            }
+          },
+  
+          {
+            name:{
+              first:'Cribys & Bros',
+              last: 'Failed . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'May 09',
+            picture: {
+                thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+            }
+          },
+  
+          {
+            name:{
+              first:'Utopia',
+              last: 'Success . 200 AED'
+            },
+            email:'fasdf@gasdf.com',
+            time:'April 23',
+            picture: {
+                thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+            }
+          }
+        ]});
+  
+      }
+      else
+      {
+        if(data3 === false)
+        {
+          this.setState({data3:true});
+          this.setState({data2:false});
+          this.setState({data1:false});
+
+          this.setState({data:[
+            {
+              name:{
+                first:'Shopwise',
+                last: 'Success . 200 AED'
+              },
+              email:'fasdf@gasdf.com',
+              time:'3:20',
+              picture: {
+                  thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+              }
+            },
+    
+            {
+              name:{
+                first:'Umbrella',
+                last: 'Success . 200 AED'
+              },
+              email:'fasdf@gasdf.com',
+              time:'1:30',
+              picture: {
+                  thumbnail: 'https://randomuser.me/api/portraits/thumb/men/83.jpg'
+              }
+            },
+    
+            {
+              name:{
+                first:'The Lucky Ones',
+                last: 'Failed . 200 AED'
+              },
+              email:'fasdf@gasdf.com',
+              time:'May 12',
+              picture: {
+                  thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+              }
+            },
+    
+            {
+              name:{
+                first:'Cribys & Bros',
+                last: 'Success . 200 AED'
+              },
+              email:'fasdf@gasdf.com',
+              time:'May 09',
+              picture: {
+                  thumbnail: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+              }
+            },
+    
+            {
+              name:{
+                first:'Utopia',
+                last: 'Failed . 200 AED'
+              },
+              email:'fasdf@gasdf.com',
+              time:'April 23',
+              picture: {
+                  thumbnail: 'https://randomuser.me/api/portraits/thumb/men/83.jpg'
+              }
+            }
+          ]});
+        }
+
+      }
+
+
+    }
+
     _renderItem ({item, index}, parallaxProps) {
         return (
             <View style={styles.item}>
@@ -166,6 +387,7 @@ export default class App extends Component {
                     parallaxFactor={0.4}
                     showSpinner={true}
                     {...parallaxProps}
+                    onPress = { () => }
                 />                
                 <Text style={styles.title} numberOfLines={2}>
                     { item.title }
